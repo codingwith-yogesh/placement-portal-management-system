@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+
+        <h2>
+            Student Dashboard
+        </h2>
+
+        <p class="text-muted">
+
+            Welcome {{ request.user.username }}
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3 mb-4">
+
+        <div class="card shadow text-center">
+
+            <div class="card-body">
+
+                <h4>Profile</h4>
+
+                <a href="/profile/"
+                   class="btn btn-primary">
+
+                    View
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-4">
+
+        <div class="card shadow text-center">
+
+            <div class="card-body">
+
+                <h4>Jobs</h4>
+
+                <a href="/jobs/"
+                   class="btn btn-success">
+
+                    Browse
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-4">
+
+        <div class="card shadow text-center">
+
+            <div class="card-body">
+
+                <h4>Applications</h4>
+
+                <a href="/my-applications/"
+                   class="btn btn-warning">
+
+                    View
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3 mb-4">
+
+        <div class="card shadow text-center">
+
+            <div class="card-body">
+
+                <h4>Resume</h4>
+
+                <a href="/upload-resume/"
+                   class="btn btn-info">
+
+                    Upload
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

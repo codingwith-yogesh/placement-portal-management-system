@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    My Applications
+
+</h2>
+
+<table class="table table-bordered table-hover">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Job</th>
+
+            <th>Company</th>
+
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for app in applications %}
+
+    <tr>
+
+        <td>
+
+            {{ app.job.title }}
+
+        </td>
+
+        <td>
+
+            {{ app.job.company.company_name }}
+
+        </td>
+
+        <td>
+
+            {% if app.status == "Selected" %}
+
+                <span class="badge bg-success">
+
+                    Selected
+
+                </span>
+
+            {% elif app.status == "Rejected" %}
+
+                <span class="badge bg-danger">
+
+                    Rejected
+
+                </span>
+
+            {% elif app.status == "Shortlisted" %}
+
+                <span class="badge bg-primary">
+
+                    Shortlisted
+
+                </span>
+
+            {% else %}
+
+                <span class="badge bg-warning text-dark">
+
+                    Applied
+
+                </span>
+
+            {% endif %}
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
